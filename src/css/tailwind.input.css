@@ -1,0 +1,95 @@
+/*!
+Theme Name: ContentBerg Child
+Theme URI: http://theme-sphere.com/
+Description: A child theme of ContentBerg
+Author: ThemeSphere
+Author URI: http://theme-sphere.com
+Template: contentberg
+Version: 1.0
+*/
+@config "tailwind.config.js";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body text-base text-raisin-black font-normal;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-raisin-black;
+  }
+  h1{
+    @apply text-lev-title-2m lg:text-lev-title-2xl font-semibold
+  }
+  h2{
+    @apply text-lev-title-m lg:text-lev-title-2m mb-6 font-semibold
+  }
+  h3{
+    @apply text-lev-title-2sm lg:text-lev-title-sm font-semibold
+  }
+  
+  
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@layer utilities {
+  
+}
+
+.article-main-content mark + mark{
+  position: relative;
+  margin-top: -8px;
+}
+.article-main-content mark + mark:before{
+  content: '';
+  width: 10px;
+  height: 20px;
+  background-color: #f8dbba;
+  position: absolute;
+  top: -10px;
+  left: 0;
+}
+
+/* enable Flickity by default */
+.carousel-mobile.carousel:after {
+  content: 'flickity';
+  display: none; /* hide :after */
+}
+
+@media screen and ( min-width: 768px ) {
+  /* disable Flickity for large devices */
+  .carousel-mobile.carousel:after {
+    content: '';
+  }
+}
+.animate-fill {
+  animation-name: fill-colors;
+  animation-timing-function: ease-in-out;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fill-colors {
+  0% {
+    fill: #111111;
+  }
+  25% {
+    fill: #F8DBB9;
+  }
+  50% {
+    fill: #679BEE;
+  }
+  75% {
+    fill: #D0A7C5;
+  }
+  100% {
+    fill: #111111;
+  }
+}
